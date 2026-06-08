@@ -24,27 +24,63 @@ Let $f(p) = \frac{C_{max}(p)}{|V|}$ where $C_{max}(p)$ is the size of the larges
 the function - nearly "jumps" to 1 - increases very sharply. It is an indicator of the theorem, namely if we increase the size of the grid we shall see faster 
 increase at the value of 0.5. 
 
+# Example grid
+The figure below shows a randomly generated $8 \times 8$ lattice with assigned edge parameters.
+![Example grid](images/grid.png)
+
+# Percolation curve
+The figure below shows the curve of of a simulation on a randomly generated $200 \times 200$ lattice.
+![Curve](images/simulation.png)
+
+
 # Project structure
 src/
+
 graph.py # lattice generation
+
 unionfind.py # Union-Find data structure
+
 percolation.py # percolation simulation
+
 plotting.py # visualization
 
 tests/
 test_graph.py
 
 notebooks/
+
 example.ipynb
 
 # Installation
+Clone the repository and install dependencies:
+
+git clone https://github.com/kalteee/Percolation.git
+
+cd percolation
+
 pip install -r requirements.txt
 
 # Running a simulation
-python run.py
+Run a full simulation and visualize the percolation transition:
 
-# Running test
-pytest
+python run_experiment.py
+
+You can change the grid size:
+
+python run_experiment.py --n 200
+
+To generate an example lattice visualization:
+
+python plot_grid.py
+
+You can change the grid size:
+
+python plot_grid.py --n 8
+
+# Running tests
+You can test wether the number of edges are correct, and whether there are any duplicates for a given n:
+
+pytest test/test_graph.py --n 60
 
 # Implementation details
 
@@ -53,8 +89,4 @@ The non-trivial part of the implementation is the use of the Union-Find data str
 Edges are processed in increasing order of their assigned random parameters. This realizes the entire coupled percolation process in a single pass through the edge set. This decreases the time complexity of the simulation. 
 
 The largest component size is maintained dynamically during the Union-Find operations.
-
-# Example grid
-
-
 
