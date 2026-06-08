@@ -1,7 +1,12 @@
+from typing import List, Tuple
 import matplotlib.pyplot as plt
 from src.graph import add_parameters
 from src.percolation import largest_component_evolution
-def plot_graph(n, edges_with_parameters):
+
+def plot_graph(n: int, edges_with_parameters: List[Tuple[int, int, float]]) -> None:
+    """
+    Plots the grid with the id. of vertices and the weights of the edges.
+    """
     vertices = [(i, j) for i in range(n) for j in range(n)]
     vertex_codes = [i * n + j for i in range(n) for j in range(n)]
 
@@ -22,7 +27,11 @@ def plot_graph(n, edges_with_parameters):
     plt.grid(True)
     plt.show()
 
-def plot_func(n):
+def plot_func(n: int) -> None:
+    """
+    Runs a simulation, then plots the relative size of the maximal cardinality component (f(p))
+    as a function of (p). Shows the theoretical treshold p_c = 0.5. For further information see README. 
+    """
     edges_with_parameters = list(add_parameters(n))
 
     result_series = largest_component_evolution(n, edges_with_parameters)
@@ -30,11 +39,14 @@ def plot_func(n):
     p_values, max_sizes = zip(*result_series)
 
     f_values = [max_size / (n**2) for max_size in max_sizes]
-
  
-    plt.plot(p_values, f_values, marker='o', linestyle='-', color='b')
-    plt.xlabel('p')
-    plt.ylabel('f(p)')
-    plt.title('Plot of f(p) for n=100')
+    plt.figure(figsize=(10, 6))
+    plt.plot(p_values, f_values, marker='o', linestyle='-', color='b', markersize=2, label='Simulation')
+ 
+    plt.axvline(x=0.5, color='r', linestyle='--', label='$p_c = 0.5$')
+    plt.xlabel('p (Parameter / probability)')
+    plt.ylabel('f(p) (ratio of largest component size)')
+    plt.title(f'evolution of the size of maximal cardinality component (n={n})')
+    plt.legend()
     plt.grid(True)
     plt.show()
