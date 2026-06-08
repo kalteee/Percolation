@@ -13,7 +13,7 @@ Let $G = (V,E)$ be a graph. For each $e \in E$ generate $e_p \sim U(0,1)$. For $
 
 The result graph is $G(p) = (V,E_p)$ is a realization of Bond percolation. 
 
-Let us consider the special case, when the grid is infinte, namely $\mathbb{Z}^2$. The initial quesiton of the problem, is for which critical value of p will there be a connected component with infinite cardinality. (In further readings it is called an open-cluster). 
+Let us consider the special case, when the grid is infinte, namely $\mathbb{Z}^2$. The initial question of the problem is, for which critical value of p will there be a connected component with infinite cardinality. (In further readings it is called an open-cluster). 
 
 Theorem (Harris-Kesten). Let $p_H$ denote the critical value for p, then $p_H = 0.5$.
 
