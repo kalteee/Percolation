@@ -1,3 +1,4 @@
+import argparse
 from src.graph import add_parameters
 from src.percolation import largest_component_evolution
 from src.plotting import plot_func
