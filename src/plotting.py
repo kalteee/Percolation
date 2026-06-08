@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from src.graph import add_parameters
+from src.percolation import largest_component_evolution
 def plot_graph(n, edges_with_parameters):
     vertices = [(i, j) for i in range(n) for j in range(n)]
     vertex_codes = [i * n + j for i in range(n) for j in range(n)]
@@ -24,7 +25,7 @@ def plot_graph(n, edges_with_parameters):
 def plot_func(n):
     edges_with_parameters = list(add_parameters(n))
 
-    result_series = parameter_compsize(n, edges_with_parameters)
+    result_series = largest_component_evolution(n, edges_with_parameters)
 
 
     p_values, max_sizes = zip(*result_series)
