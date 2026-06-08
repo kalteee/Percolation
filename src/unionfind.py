@@ -27,5 +27,3 @@ class UnionFind: #for the size of the maximal cardinality component
     def get_maxsize(self):
         return self.maxsize
     
-    def show(self, *args, **kwargs):
-        display(show_graph(self.roots, *args, **kwargs))
