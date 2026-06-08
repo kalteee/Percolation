@@ -24,7 +24,7 @@ def main():
 
     result = largest_component_evolution(n, edges)
 
-    plot_component_fraction(result, n)
+    plot_func(result, n)
 
 if __name__ == "__main__":
     main()
