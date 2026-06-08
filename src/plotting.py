@@ -25,13 +25,13 @@ def plot_graph(n: int, edges_with_parameters: List[Tuple[int, int, float]]) -> N
     plt.xticks(range(n))
     plt.yticks(range(n))
     plt.grid(True)
-    plt.savefig("images/grid.png")
+    plt.savefig("images/grid.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 def plot_func(n: int) -> None:
     """
     Runs a simulation, then plots the relative size of the maximal cardinality component (f(p))
-    as a function of (p). Shows the theoretical treshold p_c = 0.5. For further information see README. 
+    as a function of (p). Shows the theoretical treshold p_c = 0.5. 
     """
     edges_with_parameters = list(add_parameters(n))
 
@@ -50,5 +50,5 @@ def plot_func(n: int) -> None:
     plt.title(f'evolution of the size of maximal cardinality component (n={n})')
     plt.legend()
     plt.grid(True)
-    plt.savefig("images/simulation.png")
+    plt.savefig("images/simulation.png", dpi=300, bbox_inches="tight")
     plt.show()
