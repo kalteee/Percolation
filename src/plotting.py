@@ -27,11 +27,8 @@ def plot_func(n):
 
     result_series = largest_component_evolution(n, edges_with_parameters)
 
-
     p_values, max_sizes = zip(*result_series)
 
- 
-    n = 100
     f_values = [max_size / (n**2) for max_size in max_sizes]
 
  
