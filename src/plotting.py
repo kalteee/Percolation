@@ -25,6 +25,7 @@ def plot_graph(n: int, edges_with_parameters: List[Tuple[int, int, float]]) -> N
     plt.xticks(range(n))
     plt.yticks(range(n))
     plt.grid(True)
+    plt.savefig("grid.png")
     plt.show()
 
 def plot_func(n: int) -> None:
@@ -49,4 +50,5 @@ def plot_func(n: int) -> None:
     plt.title(f'evolution of the size of maximal cardinality component (n={n})')
     plt.legend()
     plt.grid(True)
+    plt.savefig("simulation.png")
     plt.show()
