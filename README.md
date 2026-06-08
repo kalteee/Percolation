@@ -9,7 +9,7 @@ Our goal is to track the size of the largest connected component as p increases 
 
 # Motivation
 
-Let $G = (V,E)$ be a graph. For each $e \in E$ generate $e_p ~ U(0,1)$. For $p \in [0,1]$ parameter $E_p := \{ e \in E : e_p \leq p \}$
+Let $G = (V,E)$ be a graph. For each $e \in E$ generate $e_p \sim U(0,1)$. For $p \in [0,1]$ parameter $E_p :=$ { $e \in E : e_p \leq p $}
 
 The result graph is $G(p) = (V,E_p)$ is a realization of Bond percolation. 
 
