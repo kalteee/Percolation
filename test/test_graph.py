@@ -1,6 +1,5 @@
 
 from src.graph import generate_edges
-%%ipytest
 
 def test_generate_edges():
     n = 5
