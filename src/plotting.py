@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from src.graph import add_parameters
 def plot_graph(n, edges_with_parameters):
     vertices = [(i, j) for i in range(n) for j in range(n)]
     vertex_codes = [i * n + j for i in range(n) for j in range(n)]
