@@ -3,16 +3,25 @@ from src.percolation import largest_component_evolution
 from src.plotting import plot_func
 
 def main():
-    n = 100
 
-    print(f"Running bond percolation on a {n}x{n} grid...")
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--n",
+        type=int,
+        default=100,
+        help="Grid side length"
+    )
+
+    args = parser.parse_args()
+
+    n = args.n
+
+    print(f"Running simulation with n={n}")
 
     edges = list(add_parameters(n))
 
     result = largest_component_evolution(n, edges)
-
-    print("Simulation finished.")
-    print(f"Final largest component size: {result[-1][1]}")
 
     plot_component_fraction(result, n)
 
