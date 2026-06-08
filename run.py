@@ -22,9 +22,9 @@ def main():
 
     edges = list(add_parameters(n))
 
-    result = largest_component_evolution(n)
+    result = largest_component_evolution(n, edges)
 
-    plot_func(result, n)
+    plot_func(n)
 
 if __name__ == "__main__":
     main()
