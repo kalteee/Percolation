@@ -1,5 +1,13 @@
+from typing import Iterator, Tuple
 import numpy as np
-def generate_edges(n):
+def generate_edges(n: int) ->Iterator[Tuple[int, int]]:
+    """
+    Generating function for the edges of the grid. 
+    Args:
+        n (int): the size of the side of the grid. 
+    Yields:
+        Iterator[Tuple[int, int]]: edge as a pair of (vertex_id_1, vertex_id_2), where vertex_id_1 < vertex_id_2.
+    """
     vertices = [(i, j) for i in range(n) for j in range(n)]
     visited = set()
     for v in vertices:
@@ -13,7 +21,15 @@ def generate_edges(n):
                     visited.add(edge)
                     yield edge
 
-def add_parameters(n):
+def add_parameters(n: int) -> Iterator[Tuple[int, int, float]]:
+    """
+    Maps a uniformly distributed random value from [0,1) to every edge of the grid.
+
+    Args:
+        n (int): size of the side of the grid.
+    Yields:
+        Iterator[Tuple[int, int, float]]: A (vertex_id_1, vertex_id_2, probability) tuple.
+    """
     edges_generator = generate_edges(n)
     for edge in edges_generator:
         parameter = np.random.uniform(0, 1)
