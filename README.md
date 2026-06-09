@@ -65,11 +65,11 @@ pip install -r requirements.txt
 # Running a simulation
 Run a full simulation and visualize the percolation transition:
 
-python run_experiment.py
+python run.py
 
 You can change the grid size:
 
-python run_experiment.py --n 200
+python run.py --n 200
 
 To generate an example lattice visualization:
 
